@@ -1,0 +1,19 @@
+name: Save Repo Traffic
+on:
+  schedule:
+    - cron: '0 0 * * *' # Se ejecuta cada medianoche
+  workflow_dispatch: # Permite ejecutarlo manualmente para probar
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      
+      - name: Fetch clones data
+        uses: githubnext/flat@v1
+        with:
+          http_url: https://api.github.com/repos/devgelo-labs/astro-starter-pro/traffic/clones
+          downloaded_filename: data/clones.json
+          authorization: bearer ${{ secrets.GRAPH_TOKEN }}

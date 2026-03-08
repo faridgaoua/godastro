@@ -18,6 +18,7 @@ import Schema from "@/components/seo/Schema.astro";
 import Navbar from "@/components/layout/Navbar.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
 import "@/styles/global.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import Analytics from "@vercel/analytics/astro";
@@ -44,6 +45,7 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       ignoreTitleTemplate={finalIgnoreTitleTemplate}
     />
     <ClientRouter />
+    <LoadingIndicator color="#7e22ce" />
     <Schema type="WebSite" data={{}} />
     <slot name="head" />
     <script is:inline>

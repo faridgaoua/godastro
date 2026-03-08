@@ -1,0 +1,82 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Headline from "@/components/ui/Headline.astro";
+import Content from "@/components/widgets/Content.astro";
+
+const metadata = {
+  title: "Preise & Konditionen | Clean-Saar Reinigungsservice",
+  description: "Transparente Preisgestaltung für Privat- und Gewerbekunden in Saarbrücken. Fordern Sie Ihr individuelles Angebot an.",
+};
+
+const pricingCategories = [
+  {
+    title: "Privathaushalt",
+    price: "ab 25€",
+    unit: "pro Stunde",
+    features: ["Unterhaltsreinigung", "Bodenpflege", "Bad & Küche", "Flexibler Turnus"],
+    bestFor: "Privatpersonen in Saarbrücken & Umgebung",
+  },
+  {
+    title: "Büro & Gewerbe",
+    price: "Auf Anfrage",
+    unit: "Individuell",
+    features: ["Tägliche Reinigung", "Sanitärhygiene", "Müllentsorgung", "Schlüsselverwaltung"],
+    bestFor: "Unternehmen, Kanzleien & Praxen",
+  },
+  {
+    title: "Glasreinigung",
+    price: "ab 45€",
+    unit: "Pauschal",
+    features: ["Fenster & Rahmen", "Schaufenster", "Wintergärten", "Inkl. Anfahrt (SB)"],
+    bestFor: "Glasklare Sicht für Privat & Gewerbe",
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <section class="relative px-4 py-16 sm:px-6 lg:px-8 md:py-24">
+    <Headline
+      tagline="Preise"
+      title="Transparente Kosten"
+      subtitle="Qualität hat ihren Preis, muss aber nicht unbezahlbar sein. Wir bieten faire Konditionen für das gesamte Saarland."
+    />
+
+    <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto mt-12">
+      {pricingCategories.map((category) => (
+        <div class="flex flex-col p-8 bg-card border border-border rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-2xl font-bold mb-2">{category.title}</h3>
+          <p class="text-sm text-muted-foreground mb-4">{category.bestFor}</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-primary">{category.price}</span>
+            <span class="text-muted-foreground ml-1">{category.unit}</span>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow">
+            {category.features.map((feature) => (
+              <li class="flex items-center text-sm">
+                <svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="/contact"
+            class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:bg-primary/90 transition-colors"
+          >
+            Angebot anfordern
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <Content
+      classes={{ container: "mt-16" }}
+      title="Warum wir keine Standard-Festpreise für alles haben"
+      description={[
+        "Jedes Objekt in Saarbrücken ist einzigartig. Der Preis für eine professionelle Reinigung hängt von verschiedenen Faktoren ab: dem Verschmutzungsgrad, der Bodenbeschaffenheit und Ihren individuellen Wünschen.",
+        "Für Gewerbekunden erstellen wir nach einer kostenlosen Erstbesichtigung ein detailliertes Leistungsverzeichnis zum monatlichen Festpreis. So haben Sie volle Planungssicherheit ohne versteckte Kosten."
+      ]}
+    />
+  </section>
+</BaseLayout>

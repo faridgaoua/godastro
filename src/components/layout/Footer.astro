@@ -4,42 +4,50 @@ import { siteConfig } from "@/config/site";
 
 <footer class="mt-20 border-t border-border bg-card">
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
-      <div class="flex flex-col items-center gap-2 md:items-start">
-        <span class="text-lg font-bold text-foreground">{siteConfig.name}</span>
-        <p class="text-sm text-muted-foreground">
-          {siteConfig.description}
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+      
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <span class="text-xl font-bold text-foreground">CLEAN-SAAR</span>
+        <p class="text-sm text-muted-foreground text-center md:text-left leading-relaxed">
+          Ihr Experte für professionelle Gebäudereinigung im Saarland. 
+          Wir bringen Glanz in Ihre Büros und privaten Räumlichkeiten in Saarbrücken und Umgebung.
         </p>
       </div>
-      <div class="flex items-center gap-6">
-        <a
-          href={siteConfig.socialLinks.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >Twitter</a
-        >
-        <a
-          href={siteConfig.socialLinks.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >GitHub</a
-        >
-        <a
-          href={siteConfig.socialLinks.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >Discord</a
-        >
+
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <span class="text-sm font-semibold uppercase tracking-wider text-foreground">Leistungen</span>
+        <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+          <a href="/services/bueroreinigung" class="hover:text-primary transition-colors">Büroreinigung</a>
+          <a href="/services/fensterreinigung" class="hover:text-primary transition-colors">Fensterreinigung</a>
+          <a href="/services/unterhaltsreinigung" class="hover:text-primary transition-colors">Unterhaltsreinigung</a>
+          <a href="/services/treppenhausreinigung" class="hover:text-primary transition-colors">Treppenhausreinigung</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <span class="text-sm font-semibold uppercase tracking-wider text-foreground">Kontakt</span>
+        <div class="flex flex-col items-center md:items-start gap-2 text-sm text-muted-foreground">
+          <p>Mainzer Straße 12, 66111 Saarbrücken</p>
+          <a href="tel:+496811234567" class="font-bold text-foreground hover:text-primary transition-colors">
+            Tel: 0681 / 123 4567
+          </a>
+          <a href="mailto:info@clean-saar.de" class="hover:text-primary transition-colors">
+            info@clean-saar.de
+          </a>
+        </div>
       </div>
     </div>
-    <div
-      class="mt-8 border-t border-border pt-8 text-center text-xs text-muted-foreground"
-    >
-      &copy; {new Date().getFullYear()}
-      {siteConfig.author}. All rights reserved.
+
+    <div class="mt-12 border-t border-border pt-8 flex flex-col items-center justify-between gap-6 md:flex-row">
+      <p class="text-xs text-muted-foreground">
+        &copy; {new Date().getFullYear()} Clean-Saar. Alle Rechte vorbehalten.
+      </p>
+      
+      <div class="flex gap-6 text-xs text-muted-foreground">
+        <a href="/impressum" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">Impressum</a>
+        <a href="/datenschutz" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">Datenschutz</a>
+        <a href="/agb" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">AGB</a>
+      </div>
     </div>
   </div>
 </footer>

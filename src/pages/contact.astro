@@ -5,61 +5,67 @@ import Content from "@/components/widgets/Content.astro";
 import Form from "@/components/ui/Form.astro";
 
 const metadata = {
-  title: "Contact",
-  description: "Get in touch with us to discuss your next project.",
+  title: "Kontakt & Angebot | Clean-Saar Saarbrücken",
+  description: "Fordern Sie Ihr kostenloses Reinigungsangebot an. Wir beraten Sie gerne persönlich zu unseren Leistungen in Saarbrücken und Umgebung.",
 };
 
-const visionText = ["Get in touch with us to discuss your next project."];
+const introText = [
+  "Haben Sie Fragen zu unseren Reinigungsleistungen oder möchten Sie ein unverbindliches Angebot erhalten? Wir freuen uns auf Ihre Nachricht!",
+  "Unser Team berät Sie kompetent und erstellt ein auf Ihre Bedürfnisse zugeschnittenes Reinigungskonzept."
+];
 ---
 
 <BaseLayout {metadata}>
-  <Content tagline="Contact" title="Contact" description={visionText} />
+  <Content tagline="Kontakt" title="Wir freuen uns auf Sie" description={introText} />
+  
   <div
     class="reveal mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
   >
+    <h2 class="text-xl font-bold mb-6 text-center">Angebot anfordern</h2>
     <Form />
   </div>
+
   <Features
-    tagline="Contact Means"
-    title="We are here to help you"
-    subtitle="Choose the communication channel you prefer. We respond in less than 24 hours."
+    tagline="Erreichbarkeit"
+    title="So finden Sie uns"
+    subtitle="Wir sind während unserer Geschäftszeiten für Sie da und antworten in der Regel innerhalb von 24 Stunden."
     classes={{ container: "pt-0 md:pt-0" }}
     features={[
       {
-        title: "Phone",
-        description: "+123 456 7890",
+        title: "Telefon",
+        description: "0681 / 123 4567",
         icon: "lucide:phone",
         iconClass: "bg-green-500/10 text-green-400",
       },
       {
-        title: "Email",
-        description: "contact@company.com",
+        title: "E-Mail",
+        description: "info@clean-saar.de",
         icon: "lucide:mail",
-        iconClass: "bg-yellow-500/10 text-yellow-400",
+        iconClass: "bg-green-500/10 text-green-400",
       },
       {
-        title: "Location",
-        description: "City, Country",
+        title: "Standort",
+        description: "Mainzer Str. 12, 66111 Saarbrücken",
         icon: "lucide:map-pin",
         iconClass: "bg-red-500/10 text-red-400",
       },
       {
-        title: "Personalized Attention",
-        description: "We understand your needs to offer tailored solutions.",
-        icon: "lucide:user-check",
-        iconClass: "bg-blue-500/10 text-blue-400",
+        title: "Kostenlose Besichtigung",
+        description: "Wir besichtigen Ihr Objekt vor Ort in Saarbrücken für ein faires Festpreis-Angebot.",
+        icon: "lucide:eye",
+        iconClass: "bg-yellow-500/10 text-yellow-400",
       },
       {
-        title: "Technical Support",
-        description: "We resolve any doubt or technical incident quickly.",
-        icon: "lucide:wrench",
+        title: "Schnelle Reaktionszeit",
+        description: "Anfragen per Formular oder E-Mail werden meist noch am selben Tag bearbeitet.",
+        icon: "lucide:zap",
         iconClass: "bg-purple-500/10 text-purple-400",
       },
       {
-        title: "Strategic Consulting",
-        description: "We advise you to ensure the success of your project.",
-        icon: "lucide:briefcase",
-        iconClass: "bg-pink-500/10 text-pink-400",
+        title: "Regionale Nähe",
+        description: "Egal ob Dudweiler, St. Johann oder Völklingen – wir sind Ihr Partner in der Nachbarschaft.",
+        icon: "lucide:home",
+        iconClass: "bg-orange-500/10 text-orange-400",
       },
     ]}
   />

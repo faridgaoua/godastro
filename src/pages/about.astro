@@ -3,46 +3,44 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getImage } from "astro:assets";
 import Content2 from "@/components/widgets/Content2.astro";
 import Values from "@/components/widgets/Values.astro";
-import aboutImage from "@/assets/images/about-office.webp";
-import { Carousel } from 'astro-carousel';
-
+import aboutImage from "@/assets/images/clean-saar-team.jpg"; 
 
 const metadata = {
-  title: "About us",
+  title: "Über uns | Clean-Saar – Ihr Reinigungsteam im Saarland",
   description:
-    "Learn more about our vision, values, and the team behind Astro Starter Pro.",
+    "Erfahren Sie mehr über Clean-Saar. Wir sind Ihr lokaler Partner für Sauberkeit und Hygiene in Saarbrücken, Saarlouis und Völklingen.",
 };
 
 const values = [
   {
-    title: "Innovation",
+    title: "Gründlichkeit",
     description:
-      "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
+      "Sauberkeit ist kein Zufall. Wir arbeiten mit Checklisten und höchsten Standards, um jedes Mal ein perfektes Ergebnis zu liefern.",
   },
   {
-    title: "Commitment",
+    title: "Zuverlässigkeit",
     description:
-      "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
+      "Termintreue ist im Saarland Ehrensache. Wir erscheinen pünktlich und halten uns strikt an vereinbarte Reinigungsintervalle.",
   },
   {
-    title: "Quality",
+    title: "Diskretion",
     description:
-      "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
+      "Ob Anwaltskanzlei oder Privathaus – wir wahren die Privatsphäre unserer Kunden und arbeiten absolut vertrauenswürdig.",
   },
   {
-    title: "Transparency",
+    title: "Umweltbewusstsein",
     description:
-      "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
+      "Wir setzen auf biologisch abbaubare Reinigungsmittel, um die Umwelt im schönen Saarland zu schützen.",
   },
   {
-    title: "Teamwork",
+    title: "Transparenz",
     description:
-      "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
+      "Keine versteckten Kosten. Unsere Angebote sind fair, nachvollziehbar und auf Ihre Bedürfnisse zugeschnitten.",
   },
   {
-    title: "Excellence",
+    title: "Regionalität",
     description:
-      "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
+      "Wir sind stolz darauf, ein saarländisches Unternehmen zu sein und lokale Arbeitsplätze in der Region zu fördern.",
   },
 ];
 
@@ -54,35 +52,37 @@ const optimizedImage = await getImage({
 
 <BaseLayout {metadata}>
   <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
+  
   <Content2
-    title="Our Vision"
+    title="Unsere Vision für ein sauberes Saarland"
     description={[
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Clean-Saar wurde mit einem klaren Ziel gegründet: Professionelle Reinigungsdienstleistungen mit dem persönlichen Touch eines lokalen Familienunternehmens zu verbinden. Wir wissen, dass Sauberkeit die Basis für Wohlbefinden und Produktivität ist.",
+      "Seit unserer Gründung unterstützen wir Unternehmen und Privathaushalte in Saarbrücken und Umgebung dabei, ihre Räumlichkeiten in bestem Licht erstrahlen zu lassen. Dabei setzen wir auf geschultes Personal, moderne Technik und ein tiefes Verständnis für die Bedürfnisse unserer saarländischen Kunden.",
     ]}
-    tagline="About"
+    tagline="Wer wir sind"
     image={aboutImage}
-    imageAlt="Modern web development office"
+    imageAlt="Das Clean-Saar Team bei einer Objektbesichtigung in Saarbrücken"
     actions={[
       {
-        text: "Contact Us",
+        text: "Jetzt kennenlernen",
         href: "/contact",
         variant: "primary",
         icon: "lucide:mail",
       },
       {
-        text: "View Details",
-        href: "#",
+        text: "Unsere Leistungen",
+        href: "/services",
         variant: "secondary",
         icon: "lucide:arrow-right",
       },
     ]}
   />
+
   <Values
     items={values}
     columns={3}
-    tagline="Our Values"
-    title="What Defines Us"
-    subtitle="Principles that guide our daily work"
+    tagline="Unsere Werte"
+    title="Was uns auszeichnet"
+    subtitle="Prinzipien, die unsere tägliche Arbeit in Ihren Räumen leiten."
   />
 </BaseLayout>

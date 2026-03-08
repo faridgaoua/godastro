@@ -2,25 +2,31 @@ import ogImage from "@/assets/og-image.png";
 
 export const siteConfig = {
   name: "Clean-Saar",
+  // SEO-Rich Description: Includes primary keywords and location
   description:
-    "Starter template optimized for SEO and performance. A solid foundation to start your projects with best practices.",
-  url: "https://astrostarterpro.com",
-  lang: "en",
-  locale: "en_US",
-  author: "Devgelo",
-  twitter: "@Devgelo",
+    "Professionelle Gebäudereinigung & Büroreinigung in Saarbrücken. Clean-Saar sorgt für Sauberkeit im gesamten Saarland. Zuverlässig, gründlich und regional.",
+  url: "https://clean-saar.de", // Update to your actual domain
+  lang: "de", // Critical for Google.de to prioritize your site
+  locale: "de_DE",
+  author: "Clean-Saar Team",
+
+  // Local businesses rarely use Twitter/Discord for leads.
+  // I've kept the structure but focused on regional presence.
+  twitter: "@CleanSaar",
   ogImage: ogImage,
+
   socialLinks: {
-    twitter: "https://twitter.com",
-    github: "https://github.com/devgelo-labs/astro-starter-pro",
-    discord: "https://discord.com",
+    instagram: "https://instagram.com/cleansaar", // Better for "Before/After" cleaning pics
+    facebook: "https://facebook.com/cleansaar", // Better for local Saarland community reach
+    linkedin: "https://linkedin.com/company/cleansaar", // Good for B2B Büroreinigung
   },
+
   navLinks: [
-    { text: "Home", href: "/" },
-    { text: "About", href: "/about" },
-    { text: "Services", href: "/services" },
+    { text: "Startseite", href: "/" },
+    { text: "Leistungen", href: "/services" }, // "Services" is fine, but "Leistungen" is more common in DE
+    { text: "Über uns", href: "/about" },
     { text: "Blog", href: "/blog" },
-    { text: "Contact", href: "/contact" },
-    { text: "Widgets", href: "/widgets" },
+    { text: "Preise", href: "/preise" }, // Highly searched: "Reinigungspreise Saarbrücken"
+    { text: "Kontakt", href: "/contact" },
   ],
 };

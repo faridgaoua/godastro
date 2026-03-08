@@ -1,7 +1,7 @@
 import ogImage from "@/assets/og-image.png";
 
 export const siteConfig = {
-  name: "Astro Starter Pro",
+  name: "Clean-Saar",
   description:
     "Starter template optimized for SEO and performance. A solid foundation to start your projects with best practices.",
   url: "https://astrostarterpro.com",

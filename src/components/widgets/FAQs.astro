@@ -1,0 +1,69 @@
+---
+interface Item {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  items: Array<Item>;
+}
+
+const { title, subtitle, items } = Astro.props;
+---
+
+<section class="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:py-20">
+  {title && (
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-4 text-slate-900 dark:text-white">
+      {title}
+    </h2>
+  )}
+  {subtitle && (
+    <p class="text-lg text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
+      {subtitle}
+    </p>
+  )}
+
+  <div class="grid gap-4">
+    {items.map((item) => (
+      <details class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl transition-all duration-300 hover:border-primary/40 hover:shadow-sm open:shadow-md open:ring-1 open:ring-primary/10">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none focus:outline-none">
+          <span class="text-lg font-semibold text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors duration-200">
+            {item.title}
+          </span>
+          <div class="flex-shrink-0 ml-4 p-1 rounded-full bg-slate-50 dark:bg-slate-800 group-hover:bg-primary/10 group-open:bg-primary/10 transition-colors">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2.5" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              class="lucide lucide-chevron-down transition-transform duration-300 group-open:rotate-180 text-slate-400 group-hover:text-primary group-open:text-primary"
+            >
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed overflow-hidden">
+          <div class="pt-4 border-t border-slate-50 dark:border-slate-800 animate-in fade-in slide-in-from-top-2 duration-300">
+            {item.description}
+          </div>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* Remove default arrows for all major browsers */
+  summary::-webkit-details-marker,
+  summary::marker {
+    display: none;
+    content: "";
+  }
+</summary>

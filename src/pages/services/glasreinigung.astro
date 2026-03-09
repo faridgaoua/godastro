@@ -1,0 +1,32 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Content from "@/components/widgets/Content.astro";
+import Hero from "@/components/widgets/Hero.astro";
+
+const metadata = {
+  title: "Glas- & Fensterreinigung Saarland | Streifenfreier Glanz",
+  description: "Glasklare Sicht für Privat- und Gewerbekunden. Professionelle Fensterreinigung inkl. Rahmenpflege in Saarbrücken.",
+};
+---
+
+<BaseLayout {metadata}>
+  <Hero
+    tagline="Service Detail"
+    title="Glas- & Fensterreinigung"
+    subtitle="Streifenfreier Durchblick für ein helles und freundliches Ambiente."
+    actions={[{ variant: "primary", text: "Jetzt Termin buchen", href: "/contact" }]}
+  />
+
+  <!-- <Content
+    title="Glanzleistungen für Ihre Fenster"
+    items={[
+      { title: 'Rahmen- & Falzreinigung', description: 'Wir reinigen nicht nur das Glas, sondern das gesamte Fenster-Element.' },
+      { title: 'Schaufenster-Service', description: 'Regelmäßige Reinigung für den perfekten ersten Eindruck Ihres Ladenlokals.' },
+      { title: 'Schwer zugängliche Flächen', description: 'Sicherer Einsatz moderner Technik für hohe Glasfassaden.' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&q=80&w=1200',
+      alt: 'Professionelle Fensterreinigung an einem Gebäude',
+    }}
+  /> -->
+</BaseLayout>

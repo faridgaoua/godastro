@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Content from "@/components/widgets/Content.astro";
+import Hero from "@/components/widgets/Hero.astro";
+
+const metadata = {
+  title: "Baureinigung Saarbrücken | Einzugsfertige Sauberkeit",
+  description: "Wir entfernen Baustaub und Farbreste nach Neubau oder Renovierung. Bezugsfertige Reinigung im gesamten Saarland.",
+};
+---
+
+<BaseLayout {metadata}>
+  <Hero
+    tagline="Service Detail"
+    title="Bau- & Endreinigung"
+    subtitle="Wir beseitigen das Chaos der Bauphase, damit Sie stressfrei einziehen können."
+    actions={[{ variant: "primary", text: "Kostenlose Besichtigung", href: "/contact" }]}
+  />
+
+  <!-- <Content
+    isReversed
+    title="Vom Rohbau zum Wohntraum"
+    items={[
+      { title: 'Baufeinreinigung', description: 'Entfernung von Zementschleier, Farbspritzern und feinstem Baustaub.' },
+      { title: 'Aufkleber-Entfernung', description: 'Schonende Beseitigung von Schutzfolien und Etiketten auf neuen Oberflächen.' },
+      { title: 'Bezugsfertige Übergabe', description: 'Wir übergeben Ihre Immobilie in einem perfekt gereinigten Zustand.' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200',
+      alt: 'Baustelle wird professionell gereinigt',
+    }}
+  /> -->
+</BaseLayout>

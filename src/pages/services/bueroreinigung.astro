@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Content from "@/components/widgets/Content.astro";
+import Hero from "@/components/widgets/Hero.astro";
+
+const metadata = {
+  title: "Büroreinigung Saarbrücken | Professionelle Unterhaltsreinigung",
+  description: "Maximale Sauberkeit für Ihre Arbeitswelten in Saarbrücken. Zuverlässige Büroreinigung für produktive Teams.",
+};
+---
+
+<BaseLayout {metadata}>
+  <Hero
+    tagline="Service Detail"
+    title="Professionelle Büroreinigung"
+    subtitle="Ein sauberes Arbeitsumfeld ist die Basis für Erfolg und Wohlbefinden."
+    actions={[{ variant: "primary", text: "Angebot anfordern", href: "/contact" }]}
+  />
+
+  <!-- <Content
+    isReversed
+    title="Ihre Visitenkarte: Ein gepflegtes Büro"
+    items={[
+      { title: 'Individuelle Reinigungspläne', description: 'Wir passen unsere Intervalle an Ihren Geschäftsbetrieb an.' },
+      { title: 'Hygiene am Arbeitsplatz', description: 'Gezielte Desinfektion von Kontaktflächen wie Tastaturen und Türklinken.' },
+      { title: 'Werterhalt', description: 'Professionelle Pflege Ihrer Bodenbeläge und Büromöbel.' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200',
+      alt: 'Sauberes modernes Büro in Saarbrücken',
+    }}
+  /> -->
+</BaseLayout>

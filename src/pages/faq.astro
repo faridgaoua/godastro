@@ -2,62 +2,71 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Headline from "@/components/ui/Headline.astro";
 import FAQs from "@/components/widgets/FAQs.astro";
+import Content from "@/components/widgets/Content.astro";
 
 const metadata = {
   title: "Häufig gestellte Fragen (FAQ) | Clean-Saar",
-  description: "Fragen zur Büroreinigung, Glasreinigung oder Baureinigung im Saarland? Hier finden Sie alle Antworten zu unseren Leistungen.",
+  description:
+    "Fragen zur Büroreinigung, Glasreinigung oder Baureinigung im Saarland? Hier finden Sie alle Antworten zu unseren Leistungen.",
 };
+
+const introText = [
+  "Finden Sie schnelle Antworten auf die gängigsten Fragen zu unseren Reinigungsdienstleistungen im Saarland.",
+];
 
 const faqItems = [
   {
     title: "In welchen Regionen ist Clean-Saar tätig?",
-    description: "Unser Hauptfokus liegt auf dem Regionalverband Saarbrücken. Wir bedienen jedoch Kunden im gesamten Saarland, einschließlich Saarlouis, Neunkirchen und St. Ingbert.",
+    description:
+      "Unser Hauptfokus liegt auf dem Regionalverband Saarbrücken. Wir bedienen jedoch Kunden im gesamten Saarland, einschließlich Saarlouis, Neunkirchen und St. Ingbert.",
   },
   {
     title: "Sind Ihre Mitarbeiter versichert?",
-    description: "Ja, alle unsere Mitarbeiter sind fest angestellt und umfassend haftpflichtversichert. So sind Sie im Falle eines Missgeschicks bestens abgesichert.",
+    description:
+      "Ja, alle unsere Mitarbeiter sind fest angestellt und umfassend haftpflichtversichert. So sind Sie im Falle eines Missgeschicks bestens abgesichert.",
   },
   {
     title: "Muss ich Reinigungsmittel bereitstellen?",
-    description: "Nein, wir bringen alle professionellen Reinigungsmittel und Geräte standardmäßig mit. Auf Wunsch verwenden wir auch gerne Ihre speziellen Produkte oder unsere ökologischen Alternativen.",
+    description:
+      "Nein, wir bringen alle professionellen Reinigungsmittel und Geräte standardmäßig mit. Auf Wunsch verwenden wir auch gerne Ihre speziellen Produkte oder unsere ökologischen Alternativen.",
   },
   {
     title: "Wie flexibel sind die Reinigungszeiten?",
-    description: "Sehr flexibel. Wir reinigen dann, wenn es Ihren Betrieb am wenigsten stört – ob früh morgens, während der Geschäftszeiten oder am späten Abend.",
+    description:
+      "Sehr flexibel. Wir reinigen dann, wenn es Ihren Betrieb am wenigsten stört – ob früh morgens, während der Geschäftszeiten oder am späten Abend.",
   },
   {
     title: "Gibt es eine Mindestvertragslaufzeit?",
-    description: "Bei der Unterhaltsreinigung bieten wir flexible Verträge ohne lange Bindung an. Wir möchten Sie durch Qualität überzeugen, nicht durch Kleingedrucktes.",
+    description:
+      "Bei der Unterhaltsreinigung bieten wir flexible Verträge ohne lange Bindung an. Wir möchten Sie durch Qualität überzeugen, nicht durch Kleingedrucktes.",
   },
   {
     title: "Wie erfolgt die Preisberechnung?",
-    description: "Die Preise richten sich nach der Quadratmeterzahl, der Reinigungsfrequenz und dem gewünschten Leistungsumfang. Kontaktieren Sie uns für ein unverbindliches Angebot.",
+    description:
+      "Die Preise richten sich nach der Quadratmeterzahl, der Reinigungsfrequenz und dem gewünschten Leistungsumfang. Kontaktieren Sie uns für ein unverbindliches Angebot.",
   },
 ];
 ---
 
 <BaseLayout {metadata}>
-  <section class="px-4 py-16 sm:px-6 lg:px-8 md:py-24">
-    <Headline
-      tagline="Hilfe & Support"
-      title="Häufig gestellte Fragen"
-      subtitle="Finden Sie schnelle Antworten auf die gängigsten Fragen zu unseren Reinigungsdienstleistungen im Saarland."
-    />
+  <Content
+    tagline="Hilfe & Support"
+    title="Häufig gestellte Fragen"
+    description={introText}
+  />
+  <FAQs
+    items={faqItems}
+  />
 
-    <FAQs
-      title="Allgemeine Fragen"
-      subtitle="Alles, was Sie über unsere Arbeitsweise wissen müssen."
-      items={faqItems}
-    />
-
-    <div class="mt-16 text-center">
-      <p class="text-muted-foreground mb-4">Ihre Frage wurde nicht beantwortet?</p>
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-xl text-white bg-primary hover:bg-primary/90 transition-all"
-      >
-        Kontaktieren Sie uns direkt
-      </a>
-    </div>
-  </section>
+  <div class="mt-16 text-center">
+    <p class="text-muted-foreground mb-4">
+      Ihre Frage wurde nicht beantwortet?
+    </p>
+    <a
+      href="/contact"
+      class="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-xl text-white bg-primary hover:bg-primary/90 transition-all"
+    >
+      Kontaktieren Sie uns direkt
+    </a>
+  </div>
 </BaseLayout>

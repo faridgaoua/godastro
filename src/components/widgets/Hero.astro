@@ -5,51 +5,52 @@ import Headline from "@/components/ui/Headline.astro";
 import Button from "@/components/ui/Button.astro";
 import { Icon } from "astro-icon/components";
 
-// Wir erweitern die Props um bgImage
-interface Props extends HeroProps {
-  bgImage?: string;
-}
-
 const {
   title = await Astro.slots.render("title"),
   tagline,
   description = await Astro.slots.render("description"),
   actions = [],
   id,
-  isDark = true,
+  isDark = false,
   classes = {},
   bg = await Astro.slots.render("bg"),
   animate = false,
-  // Standardbild, falls keins übergeben wird
-  bgImage = "",
-} = Astro.props;
+} = Astro.props as HeroProps;
 
 const { container: containerClassProp = "" } = classes;
+
+// Update this URL to your preferred light image/texture
+const overlayImageUrl =
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000";
 ---
 
 <WidgetWrapper
   id={id}
   isDark={isDark}
-  containerClass={`min-h-[calc(100vh-72px)] flex flex-col justify-center relative overflow-hidden ${containerClassProp}`}
+  containerClass={`relative min-h-[calc(100vh-72px)] flex flex-col justify-center overflow-hidden ${containerClassProp}`}
   bg={bg}
   animate={animate}
 >
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-black/90 backdrop-blur-[1px]"></div>
+  <div
+    class="absolute inset-0 z-0 pointer-events-none select-none opacity-20 mix-blend-soft-light"
+    aria-hidden="true"
+  >
+    <img src={overlayImageUrl} alt="" class="w-full h-full object-cover" />
   </div>
 
-  <div class="text-center relative z-10 px-4">
+  <div class="text-center relative z-10">
     {
       tagline && (
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold mb-6 backdrop-blur-md">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-6">
           <span class="relative flex h-2 w-2" aria-hidden="true">
-            <span class="absolute inline-flex h-full w-full rounded-full bg-[#00BCA5]/60 opacity-75 animate-ping" />
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-[#00BCA5]" />
+            <span class="absolute inline-flex h-full w-full rounded-full bg-primary/60 opacity-75 animate-ping motion-reduce:animate-none" />
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
           {tagline}
         </div>
       )
     }
+
     {
       (title || description) && (
         <Headline
@@ -59,9 +60,8 @@ const { container: containerClassProp = "" } = classes;
           classes={{
             container: "mb-0 max-w-none",
             title:
-              "text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 drop-shadow-md",
-            subtitle:
-              "max-w-2xl mx-auto text-xl text-slate-200 mb-10 drop-shadow-sm",
+              "text-5xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6",
+            subtitle: "max-w-2xl mx-auto text-xl text-muted-foreground mb-10",
           }}
         />
       )
@@ -77,7 +77,7 @@ const { container: containerClassProp = "" } = classes;
               variant={action.variant as "primary" | "secondary"}
               size="lg"
               aria-label={action.ariaLabel}
-              class="w-full sm:w-auto shadow-xl"
+              class="w-full sm:w-auto"
             >
               {action.icon && (
                 <Icon name={action.icon} class="w-5 h-5 mr-2 -ml-1" />
@@ -88,5 +88,6 @@ const { container: containerClassProp = "" } = classes;
       }
     </div>
   </div>
+
   <slot />
 </WidgetWrapper>

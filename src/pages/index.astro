@@ -6,6 +6,7 @@ import Features from "@/components/widgets/Features.astro";
 import devImg from "@/assets/images/cleaning-team.jpg"; // Rename or replace assets
 import openSourceImg from "@/assets/images/saarland-service.jpg";
 import Content2 from "@/components/widgets/Content2.astro";
+import aboutImage from "@/assets/images/clean-saar-team.jpg"; 
 
 const metadata = {
   // SEO Primary: Use the main keyword + Brand + Location
@@ -17,7 +18,7 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-  <Hero
+  <Content2
     title={`Glänzende Sauberkeit für <br class="hidden md:block" /> <span class="bg-linear-to-r from-[#00BCA5] via-[#00BCA5] to-[#00BCA5] bg-clip-text text-transparent">Saarbrücken & Umgebung</span>`}
     tagline="Clean-Saar: Zuverlässig. Gründlich. Regional."
     description="Vom Privathaushalt bis zum Großraumbüro – wir sorgen für hygienische Reinheit im gesamten Saarland. Erfahren Sie, warum Unternehmen in Saarbrücken auf unseren Service vertrauen."
@@ -37,6 +38,26 @@ const metadata = {
       },
     ]}
   />
+  <!-- <Hero
+    title={`Glänzende Sauberkeit für <br class="hidden md:block" /> <span class="bg-linear-to-r from-[#00BCA5] via-[#00BCA5] to-[#00BCA5] bg-clip-text text-transparent">Saarbrücken & Umgebung</span>`}
+    tagline="Clean-Saar: Zuverlässig. Gründlich. Regional."
+    description="Vom Privathaushalt bis zum Großraumbüro – wir sorgen für hygienische Reinheit im gesamten Saarland. Erfahren Sie, warum Unternehmen in Saarbrücken auf unseren Service vertrauen."
+    actions={[
+      {
+        text: "Kostenloses Angebot",
+        href: "/kontakt",
+        variant: "primary",
+        icon: "lucide:calendar-check",
+      },
+      {
+        text: "Unsere Leistungen",
+        href: "/services",
+        variant: "secondary",
+        icon: "lucide:arrow-right",
+        ariaLabel: "Erfahren Sie mehr über unsere Reinigungsleistungen",
+      },
+    ]}
+  /> -->
 
   <Features
     tagline="Ihre Vorteile"

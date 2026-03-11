@@ -6,7 +6,7 @@ import Features from "@/components/widgets/Features.astro";
 import devImg from "@/assets/images/cleaning-team.jpg"; // Rename or replace assets
 import openSourceImg from "@/assets/images/saarland-service.jpg";
 import Content2 from "@/components/widgets/Content2.astro";
-import aboutImage from "@/assets/images/clean-saar-team.jpg"; 
+import aboutImage from "@/assets/images/clean-saar-team.jpg";
 
 const metadata = {
   // SEO Primary: Use the main keyword + Brand + Location
@@ -18,9 +18,10 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-  <Content2
+  <Hero
     title={`Glänzende Sauberkeit für <br class="hidden md:block" /> <span class="bg-linear-to-r from-[#00BCA5] via-[#00BCA5] to-[#00BCA5] bg-clip-text text-transparent">Saarbrücken & Umgebung</span>`}
     tagline="Clean-Saar: Zuverlässig. Gründlich. Regional."
+    image={aboutImage}
     description="Vom Privathaushalt bis zum Großraumbüro – wir sorgen für hygienische Reinheit im gesamten Saarland. Erfahren Sie, warum Unternehmen in Saarbrücken auf unseren Service vertrauen."
     actions={[
       {

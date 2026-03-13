@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from "@/config/site";
 import ThemeToggle from "@/components/ui/ThemeToggle.astro";
-import { Icon } from 'astro-icon/components'; // Assuming you use astro-icon
+import { Icon } from 'astro-icon/components'; 
 ---
 
 <nav
@@ -15,11 +15,20 @@ import { Icon } from 'astro-icon/components'; // Assuming you use astro-icon
         href="/"
         class="flex items-center gap-2 text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
       >
-        <span class="hover:text-[#00BCA5] font-black">{theme === "dark" ? (
-  <img src="/logo.png" alt="Clean-Saar" width="180" />
-) : (
-  <img src="/logo_dark.png" alt="Clean-Saar" width="180" />
-)}</span>
+        <span class="hover:text-[#00BCA5] font-black">
+          <img 
+            src="/logo.png" 
+            alt="Clean-Saar" 
+            width="180" 
+            class="hidden dark:block" 
+          />
+          <img 
+            src="/logo_dark.png" 
+            alt="Clean-Saar" 
+            width="180" 
+            class="block dark:hidden" 
+          />
+        </span>
       </a>
     </div>
 
@@ -39,6 +48,8 @@ import { Icon } from 'astro-icon/components'; // Assuming you use astro-icon
     </div>
 
     <div class="hidden md:flex items-center gap-6">
+      <ThemeToggle />
+
       <a href="tel:+496811234567" class="flex items-center gap-2 text-sm font-bold text-foreground hover:text-[#00BCA5] transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00BCA5]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         0681 / 123 4567
@@ -52,7 +63,8 @@ import { Icon } from 'astro-icon/components'; // Assuming you use astro-icon
       </a>
     </div>
 
-    <div class="md:hidden flex items-center">
+    <div class="md:hidden flex items-center gap-4">
+      <ThemeToggle />
       <button
         id="mobile-menu-button"
         type="button"
@@ -96,16 +108,20 @@ import { Icon } from 'astro-icon/components'; // Assuming you use astro-icon
 </nav>
 
 <script>
-  // Script remains largely the same, ensuring 'astro:page-load' for View Transitions
+  // Runs on initial load and after every View Transition navigation
   document.addEventListener("astro:page-load", () => {
     const button = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
     const iconClosed = document.getElementById("menu-icon-closed");
     const iconOpen = document.getElementById("menu-icon-open");
 
-    button?.addEventListener("click", () => {
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
-      button.setAttribute("aria-expanded", String(!isExpanded));
+    // Clear existing listeners to prevent double-firing if script runs twice
+    button?.replaceWith(button.cloneNode(true));
+    const newButton = document.getElementById("mobile-menu-button");
+
+    newButton?.addEventListener("click", () => {
+      const isExpanded = newButton.getAttribute("aria-expanded") === "true";
+      newButton.setAttribute("aria-expanded", String(!isExpanded));
       menu?.classList.toggle("hidden");
       iconClosed?.classList.toggle("hidden");
       iconOpen?.classList.toggle("hidden");

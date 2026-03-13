@@ -15,7 +15,11 @@ import { Icon } from 'astro-icon/components'; // Assuming you use astro-icon
         href="/"
         class="flex items-center gap-2 text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
       >
-        <span class="hover:text-[#00BCA5] font-black"><img src="/logo.png" alt="Clean-Saar" width="180"/></span>
+        <span class="hover:text-[#00BCA5] font-black">if (theme === "dark") {
+          <img src="/logo.png" alt="Clean-Saar" width="180"/>
+        } else {
+         <img src="/logo_dark.png" alt="Clean-Saar" width="180"/>
+        }</span>
       </a>
     </div>
 

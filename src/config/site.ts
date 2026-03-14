@@ -1,11 +1,11 @@
 import ogImage from "@/assets/og-image.png";
 
 export const siteConfig = {
-  name: "Clean-Saar",
+  name: "CleanSaar",
   // SEO-Rich Description: Includes primary keywords and location
   description:
     "Professionelle Gebäudereinigung & Büroreinigung in Saarbrücken. Clean-Saar sorgt für Sauberkeit im gesamten Saarland. Zuverlässig, gründlich und regional.",
-  url: "https://clean-saar.de", // Update to your actual domain
+  url: "https://cleansaar.de", // Update to your actual domain
   lang: "de", // Critical for Google.de to prioritize your site
   locale: "de_DE",
   author: "Clean-Saar Team",

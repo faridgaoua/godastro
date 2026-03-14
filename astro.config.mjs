@@ -6,7 +6,7 @@ import icon from "astro-icon";
 import remarkReadingTime from "remark-reading-time";
 
 export default defineConfig({
-  site: "https://astrostarterpro.com/",
+  site: "https://cleansaar.de/",
   integrations: [sitemap(), icon(), mdx()],
   markdown: {
     remarkPlugins: [
@@ -21,7 +21,7 @@ export default defineConfig({
   },
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "es"],
+    locales: ["en", "fr"],
     routing: {
       prefixDefaultLocale: false,
     },

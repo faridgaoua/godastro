@@ -75,19 +75,19 @@ import { siteConfig } from "@/config/site";
 
       <div class="flex gap-6 text-xs text-muted-foreground">
         <a
-          href="/impressum"
+          href="impressum"
           class="hover:text-foreground transition-colors underline-offset-4 hover:underline"
           >Impressum</a
         >
         <a
-          href="/datenschutz"
+          href="datenschutz"
           class="hover:text-foreground transition-colors underline-offset-4 hover:underline"
           >Datenschutz</a
         >
-        <a
-          href="/agb"
-          class="hover:text-foreground transition-colors underline-offset-4 hover:underline"
-          >AGB</a
+        <button
+          onclick="klaro.show()"
+          class="cursor-pointer hover:text-blue-600"
+          >Cookie-Einstellungen</button
         >
       </div>
     </div>

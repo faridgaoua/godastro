@@ -63,3 +63,60 @@
 :root[data-astro-transition] .reveal {
   transition: none !important;
 }
+
+
+
+/* 1. Position the Notice (The initial banner) */
+.klaro .cookie-notice {
+  background-color: #e5e7eb !important;
+  box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 1.5rem !important;
+  border-radius: 25px !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  right: 20px !important;
+  max-width: 500px !important; /* Keep it compact like a toast */
+}
+
+/* 2. Style the Buttons */
+.klaro .cm-btn {
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+  padding: 0.6rem 1.2rem !important;
+}
+
+.klaro .cm-btn-success {
+  background-color: green !important;
+}
+
+.klaro .cm-btn-danger {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
+/* 3. Style the Modal (When they click "Learn More") */
+.klaro .cookie-modal .cm-modal {
+  border-radius: 25px !important;
+  padding: 2rem !important;
+}
+
+/* 4. Custom Switch (Toggles) */
+.klaro .cm-switch input:checked + .slider {
+  background-color: green !important;
+}
+
+/* 5. Typography */
+.klaro .cm-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+}
+
+.klaro .cm-list-label .cm-service-title {
+  font-weight: 600 !important;
+}
+
+.klaro .cookie-notice p {
+color:rgb(31, 31, 31) !important;
+}

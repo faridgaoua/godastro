@@ -186,5 +186,53 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       document.addEventListener("astro:page-load", setupAnimations);
       document.addEventListener("astro:after-swap", setupAnimations);
     </script>
+    <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.min.css" />
+
+<script is:inline>
+window.klaroConfig = {
+    elementID: 'klaro',
+    storageMethod: 'cookie',
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 30,
+    privacyPolicy: '/legal/datenschutz',
+    default: false,
+    mustConsent: false, // Set to true if you want to force a choice before using the site
+    acceptAll: true,
+    noticeAsModal: false, // False = Banner at the bottom; True = Full screen modal
+    translations: {
+        de: {
+            consentNotice: {
+                description: 'Wir verwenden Cookies, um die Website-Nutzung zu analysieren.',
+                learnMore: 'Einstellungen anpassen',
+            },
+            consentModal: {
+                title: 'Datenschutz-Einstellungen',
+                description: 'Hier können Sie einstellen, welche Dienste Sie zulassen möchten.',
+            },
+            googleAnalytics: {
+                title: 'Google Analytics',
+                description: 'Sammelt Daten darüber, wie oft ein Benutzer eine Website besucht hat.'
+            },
+            purposes: {
+                analytics: 'Besucher-Statistiken',
+            }
+        }
+    },
+    services: [
+        {
+            name: 'googleAnalytics',
+            purposes: ['analytics'],
+            onAccept: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-YOUR_ID', { 'anonymize_ip': true });
+            `
+        }
+    ]
+};
+</script>
+
+<script defer type="text/javascript" src="https://cdn.kiprotect.com/klaro/v0.7.18/klaro.js"></script>
   </body>
 </html>

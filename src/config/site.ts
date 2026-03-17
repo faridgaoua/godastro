@@ -5,7 +5,7 @@ export const siteConfig = {
   // SEO-Rich Description: Includes primary keywords and location
   description:
     "Professionelle Gebäudereinigung & Büroreinigung in Saarbrücken. Clean-Saar sorgt für Sauberkeit im gesamten Saarland. Zuverlässig, gründlich und regional.",
-  url: "https://cleansaar.de", // Update to your actual domain
+  url: "https://godastro.netlify.app", // Update to your actual domain
   lang: "de", // Critical for Google.de to prioritize your site
   locale: "de_DE",
   author: "Clean-Saar Team",

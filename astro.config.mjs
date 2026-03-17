@@ -6,7 +6,7 @@ import icon from "astro-icon";
 import remarkReadingTime from "remark-reading-time";
 
 export default defineConfig({
-  site: "https://cleansaar.de/",
+  site: "https://godastro.netlify.app/",
   integrations: [sitemap(), icon(), mdx()],
   markdown: {
     remarkPlugins: [
